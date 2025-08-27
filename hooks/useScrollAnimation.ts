@@ -10,11 +10,18 @@ interface UseScrollAnimationOptions {
 
 export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options
 
   useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted || typeof window === 'undefined') return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -39,16 +46,23 @@ export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
         observer.unobserve(currentRef)
       }
     }
-  }, [threshold, rootMargin, triggerOnce])
+  }, [threshold, rootMargin, triggerOnce, isMounted])
 
-  return { ref, isVisible }
+  return { ref, isVisible: isMounted ? isVisible : false }
 }
 
 export function useParallax(speed: number = 0.5) {
   const [offset, setOffset] = useState(0)
+  const [isMounted, setIsMounted] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted || typeof window === 'undefined') return
+
     const handleScroll = () => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect()
@@ -60,7 +74,7 @@ export function useParallax(speed: number = 0.5) {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [speed])
+  }, [speed, isMounted])
 
-  return { ref, offset }
+  return { ref, offset: isMounted ? offset : 0 }
 }

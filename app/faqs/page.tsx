@@ -140,7 +140,7 @@ export default function FAQs() {
               Book a Discovery Call
             </CTAButton>
             <a 
-              href="https://wa.me/1234567890" 
+              href="https://wa.me/9775679279" 
               className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg bg-green-600 hover:bg-green-700 text-white transition-colors duration-200"
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">

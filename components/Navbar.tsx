@@ -10,14 +10,21 @@ interface NavbarProps {
 export default function Navbar({ transparent = false }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted || typeof window === 'undefined') return
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isMounted])
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${
@@ -28,7 +35,14 @@ export default function Navbar({ transparent = false }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="group flex items-center">
+          <Link href="/" className="group flex items-center space-x-3">
+            <div className="relative">
+              <img 
+                src="/images/logo.jpg" 
+                alt="Money & Me Logo" 
+                className="w-12 h-12 rounded-full object-cover border-2 border-primary-200 group-hover:border-primary-400 transition-all duration-300 group-hover:scale-110"
+              />
+            </div>
             <div className="relative">
               <span className="text-3xl font-serif font-bold bg-gradient-to-r from-primary-600 via-teal-600 to-purple-600 bg-clip-text text-transparent group-hover:from-purple-600 group-hover:via-primary-600 group-hover:to-teal-600 transition-all duration-500">
                 Money & Me

@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CTAButton from '@/components/CTAButton'
 import ExpertCard from '@/components/ExpertCard'
+import AnimatedSection from '@/components/AnimatedSection'
 
 export default function About() {
   return (
@@ -9,88 +10,120 @@ export default function About() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-primary-50 via-teal-50 to-neutral-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-neutral-800 mb-6">
-            Our Story
-          </h1>
-          <p className="text-xl text-neutral-600 leading-relaxed">
-            Transforming lives through the power of mindful money relationships
-          </p>
+      <section className="pt-24 pb-16 relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)' }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-500/90 via-teal-500/80 to-neutral-900/90"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedSection animation="fadeInUp">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 drop-shadow-lg">
+              Our Story
+            </h1>
+            <p className="text-xl text-white/90 leading-relaxed drop-shadow-md">
+              Transforming lives through the power of mindful money relationships
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-primary-200/30 to-teal-200/30 rounded-full"></div>
+        <div className="absolute bottom-20 left-10 w-24 h-24 bg-gradient-to-br from-teal-200/30 to-primary-200/30 rounded-full"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-neutral-700 leading-relaxed mb-8">
-              Money & Me was born from a simple yet profound realization: most people's financial struggles 
-              aren't really about money—they're about the deep-seated beliefs, fears, and patterns that 
-              govern how we relate to abundance, security, and self-worth.
-            </p>
+            <AnimatedSection animation="fadeInLeft" delay={0.2}>
+              <p className="text-lg text-neutral-700 leading-relaxed mb-8">
+                Money & Me was born from a simple yet profound realization: most people's financial struggles 
+                aren't really about money—they're about the deep-seated beliefs, fears, and patterns that 
+                govern how we relate to abundance, security, and self-worth.
+              </p>
+            </AnimatedSection>
             
-            <p className="text-lg text-neutral-700 leading-relaxed mb-8">
-              After witnessing countless individuals trapped in cycles of financial stress despite having 
-              all the "right" information about budgeting and investing, our founders knew there had to be 
-              a different approach. One that honored the emotional, psychological, and even spiritual 
-              dimensions of our relationship with money.
-            </p>
+            <AnimatedSection animation="fadeInRight" delay={0.4}>
+              <p className="text-lg text-neutral-700 leading-relaxed mb-8">
+                After witnessing countless individuals trapped in cycles of financial stress despite having 
+                all the "right" information about budgeting and investing, our founders knew there had to be 
+                a different approach. One that honored the emotional, psychological, and even spiritual 
+                dimensions of our relationship with money.
+              </p>
+            </AnimatedSection>
             
-            <p className="text-lg text-neutral-700 leading-relaxed mb-8">
-              What started as a small coaching practice has grown into a global movement, helping thousands 
-              of people break free from limiting beliefs about money and step into their natural state of 
-              abundance. We believe that financial freedom isn't just about having more money—it's about 
-              feeling free, empowered, and aligned in how you create, manage, and enjoy your resources.
-            </p>
+            <AnimatedSection animation="fadeInLeft" delay={0.6}>
+              <p className="text-lg text-neutral-700 leading-relaxed mb-8">
+                What started as a small coaching practice has grown into a global movement, helping thousands 
+                of people break free from limiting beliefs about money and step into their natural state of 
+                abundance. We believe that financial freedom isn't just about having more money—it's about 
+                feeling free, empowered, and aligned in how you create, manage, and enjoy your resources.
+              </p>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="py-20 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)' }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-50/95 via-primary-50/90 to-teal-50/95"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+            <AnimatedSection animation="scaleIn" delay={0.2}>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-neutral-800 mb-4">Our Mission</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  To guide individuals in transforming their relationship with money from one of fear and 
+                  scarcity to one of empowerment and abundance, creating ripple effects of positive change 
+                  in their lives and communities.
+                </p>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-neutral-800 mb-4">Our Mission</h3>
-              <p className="text-neutral-600 leading-relaxed">
-                To guide individuals in transforming their relationship with money from one of fear and 
-                scarcity to one of empowerment and abundance, creating ripple effects of positive change 
-                in their lives and communities.
-              </p>
-            </div>
+            </AnimatedSection>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
+            <AnimatedSection animation="scaleIn" delay={0.4}>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-neutral-800 mb-4">Our Vision</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  A world where every person feels worthy of abundance and has the tools to create financial 
+                  well-being that aligns with their deepest values and highest aspirations.
+                </p>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-neutral-800 mb-4">Our Vision</h3>
-              <p className="text-neutral-600 leading-relaxed">
-                A world where every person feels worthy of abundance and has the tools to create financial 
-                well-being that aligns with their deepest values and highest aspirations.
-              </p>
-            </div>
+            </AnimatedSection>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+            <AnimatedSection animation="scaleIn" delay={0.6}>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-neutral-800 mb-4">Our Values</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  Compassion, authenticity, and empowerment guide everything we do. We believe in meeting 
+                  each person exactly where they are and supporting their unique journey to financial freedom.
+                </p>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-neutral-800 mb-4">Our Values</h3>
-              <p className="text-neutral-600 leading-relaxed">
-                Compassion, authenticity, and empowerment guide everything we do. We believe in meeting 
-                each person exactly where they are and supporting their unique journey to financial freedom.
-              </p>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -98,57 +131,71 @@ export default function About() {
       {/* Team Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-neutral-800 mb-6">
-              Meet Our Team
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Our coaches bring together decades of experience in finance, psychology, and transformational work.
-            </p>
-          </div>
+          <AnimatedSection animation="fadeInUp">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-neutral-800 mb-6">
+                Meet Our Team
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                Our coaches bring together decades of experience in finance, psychology, and transformational work.
+              </p>
+            </div>
+          </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-primary-50 to-teal-50 rounded-2xl p-8">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-200 to-teal-200 mb-6 flex items-center justify-center">
-                  <div className="text-3xl font-serif font-bold text-primary-700">RA</div>
-                </div>
-                <h3 className="text-2xl font-semibold text-neutral-800 mb-2">Richuta Agarwal</h3>
-                <p className="text-primary-600 font-medium mb-4">Lead Money Mindset Coach & Co-Founder</p>
-                <p className="text-neutral-600 leading-relaxed mb-6">
-                  With over 15 years in financial psychology and behavioral economics, Richuta has helped 
-                  thousands of high-achievers break through income ceilings and create sustainable wealth. 
-                  She combines deep psychological insight with practical financial strategies, specializing 
-                  in working with entrepreneurs and executives who feel stuck despite their success.
-                </p>
-                <div className="text-sm text-neutral-500">
-                  <p>• Certified Financial Therapist</p>
-                  <p>• Master's in Behavioral Economics</p>
-                  <p>• 3000+ coaching hours</p>
+            <AnimatedSection animation="fadeInLeft" delay={0.3}>
+              <div className="bg-gradient-to-br from-primary-50 to-teal-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 rounded-full mb-6 overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src="/images/richuta-agarwal.jpeg" 
+                      alt="Richuta Agarwal" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-neutral-800 mb-2">Richuta Agarwal</h3>
+                  <p className="text-primary-600 font-medium mb-4">Lead Money Mindset Coach & Co-Founder</p>
+                  <p className="text-neutral-600 leading-relaxed mb-6">
+                    With over 15 years in financial psychology and behavioral economics, Richuta has helped 
+                    thousands of high-achievers break through income ceilings and create sustainable wealth. 
+                    She combines deep psychological insight with practical financial strategies, specializing 
+                    in working with entrepreneurs and executives who feel stuck despite their success.
+                  </p>
+                  <div className="text-sm text-neutral-500">
+                    <p>• Certified Financial Therapist</p>
+                    <p>• Master's in Behavioral Economics</p>
+                    <p>• 3000+ coaching hours</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
 
-            <div className="bg-gradient-to-br from-teal-50 to-primary-50 rounded-2xl p-8">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-teal-200 to-primary-200 mb-6 flex items-center justify-center">
-                  <div className="text-3xl font-serif font-bold text-teal-700">JB</div>
-                </div>
-                <h3 className="text-2xl font-semibold text-neutral-800 mb-2">Jaz Bindra</h3>
-                <p className="text-teal-600 font-medium mb-4">Transformational Finance Coach & Co-Founder</p>
-                <p className="text-neutral-600 leading-relaxed mb-6">
-                  Jaz brings a unique blend of ancient wisdom and modern financial expertise to money coaching. 
-                  With a background in both corporate finance and spiritual healing, she helps clients heal 
-                  generational money patterns and step into their power as conscious creators of wealth. 
-                  Her approach integrates mindfulness, energy work, and practical financial planning.
-                </p>
-                <div className="text-sm text-neutral-500">
-                  <p>• Certified Money Coach</p>
-                  <p>• Reiki Master & Energy Healer</p>
-                  <p>• Former Investment Banker</p>
+            <AnimatedSection animation="fadeInRight" delay={0.5}>
+              <div className="bg-gradient-to-br from-teal-50 to-primary-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 rounded-full mb-6 overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src="/images/jaz-bindra.jpeg" 
+                      alt="Jaz Bindra" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-neutral-800 mb-2">Jaz Bindra</h3>
+                  <p className="text-teal-600 font-medium mb-4">Transformational Finance Coach & Co-Founder</p>
+                  <p className="text-neutral-600 leading-relaxed mb-6">
+                    Jaz brings a unique blend of ancient wisdom and modern financial expertise to money coaching. 
+                    With a background in both corporate finance and spiritual healing, she helps clients heal 
+                    generational money patterns and step into their power as conscious creators of wealth. 
+                    Her approach integrates mindfulness, energy work, and practical financial planning.
+                  </p>
+                  <div className="text-sm text-neutral-500">
+                    <p>• Certified Money Coach</p>
+                    <p>• Reiki Master & Energy Healer</p>
+                    <p>• Former Investment Banker</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -167,7 +214,7 @@ export default function About() {
               Book Your Consultation
             </CTAButton>
             <a 
-              href="https://wa.me/1234567890" 
+              href="https://wa.me/9775679279" 
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-lg bg-white/20 hover:bg-white/30 transition-all duration-200"
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">

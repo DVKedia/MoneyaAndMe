@@ -148,7 +148,7 @@ export default function Workshops() {
               Reserve Your Spot
             </CTAButton>
             <a 
-              href="https://wa.me/1234567890" 
+              href="https://wa.me/9775679279" 
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-lg bg-white/20 hover:bg-white/30 transition-all duration-200"
             >
               Ask Questions

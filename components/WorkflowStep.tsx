@@ -37,11 +37,11 @@ export default function WorkflowStep({ number, title, description, isLast = fals
       )}
       
       {/* Content */}
-      <div className="relative z-10 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:bg-white/95">
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary-600 group-hover:to-teal-600 transition-all duration-300">
+      <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:bg-white">
+        <h3 className="text-xl font-bold text-neutral-800 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary-600 group-hover:to-teal-600 transition-all duration-300">
           {title}
         </h3>
-        <p className="text-white/90 group-hover:text-neutral-700 leading-relaxed transition-colors duration-300">
+        <p className="text-neutral-700 leading-relaxed transition-colors duration-300">
           {description}
         </p>
         

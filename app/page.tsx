@@ -111,7 +111,7 @@ export default function Home() {
               <ExpertCard
                 name="Richuta Agarwal"
                 role="Founder & Lead Coach"
-                image="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                image="/images/richuta-agarwal.jpeg"
                 bio="With over 15 years in financial coaching and mindfulness practice, Richuta helps clients break through money blocks and create sustainable wealth."
               />
             </AnimatedSection>
@@ -119,7 +119,7 @@ export default function Home() {
               <ExpertCard
                 name="Jaz Bindra"
                 role="Senior Money Coach"
-                image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                image="/images/jaz-bindra.jpeg"
                 bio="Jaz specializes in helping entrepreneurs and professionals align their financial goals with their values for lasting abundance."
               />
             </AnimatedSection>

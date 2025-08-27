@@ -16,7 +16,7 @@ export default function Footer() {
             
             {/* WhatsApp Contact */}
             <a 
-              href="https://wa.me/1234567890" 
+              href="https://wa.me/9775679279" 
               className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
